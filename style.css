@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: 'Roboto Mono', monospace;
+    --text-color: #E1E1E6;
+
+    --hue: 194;
+    --primary-color: hsl(var(--hue), 72%, 13%);
+    --secondary-color: rgba(6, 22, 27, 0.5);
+    --tertiary-color: hsl(192, 65%, 7%);
+
+    --input-bg-color: hsl(191, 65%, 7%);
+    --input-color: #7C7C8A;
+    --btn-color: hsl(195, 91%, 25%);
+    --scroll-color: hsl(191, 31%, 42%);
+    --no-favs-bg-color: hsl(192, 63%, 3%);
+    --no-favs-color: #4E5455;
+}
+
+body {
+    color: var(--text-color);
+    background-color: #000000;
+}
+
+body * {
+    font-size: 1.6rem;
+    font-family: var(--ff-primary);
+}
+
+.sr-olny {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0; 
+}
+
+#app {
+    max-width: 112rem;
+    margin: 11.5rem 16rem 11.6rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8.7rem;
+}
+
+.logo svg {
+    width: 18.63rem;
+    height: 3.28rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.search input {
+    border: none;
+    border-radius: .5rem;
+    padding: 1.45rem 1.6rem;
+
+    /*width: 46.2rem;*/
+    width: 32.08vw;
+
+    background-color: var(--input-bg-color);
+    color: var(--input-color);
+}
+
+.search button {
+    background-color: var(--btn-color);
+    border-radius: .5rem;
+    border: none;
+    padding: 1.2rem 3.2rem;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
+    color: #FFFFFF;
+    font-weight: 700;
+    
+    transition: all .7s ease;
+}
+
+.search button svg {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.search button:hover {
+    background-color: #FFFFFF;
+    color: var(--btn-color);
+
+    transition: all .7s ease;
+}
+
+.search button:hover svg path {
+    fill: var(--btn-color);
+    transition: all .7s ease;
+}
+
+.table {
+    border: 1px solid var(--scroll-color);
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table * {
+    font-size: 2rem;
+    line-height: 160%;
+    color: var(--text-color);
+}
+/*
+table tr {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+*/
+table tr:nth-child(odd) {
+    background-color: var(--secondary-color);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--tertiary-color);
+
+    border-top: 1px solid var(--scroll-color);
+    border-bottom: 1px solid var(--scroll-color);
+}
+
+table th {
+    background-color: var(--primary-color);
+    text-align: left;
+    padding: 1.6rem 4rem;
+}
+
+table tbody {
+    /*display: block;*/
+    max-height: 62.4rem;
+    overflow: overlay;
+}
+
+tbody::-webkit-scrollbar {
+    width: 2.2rem;
+}
+
+tbody::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: 1rem;
+
+    border: .8rem solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+}
+
+table td {
+    padding: 2.4rem 4rem;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+td.user img {
+    width: 5.6rem;
+    height: 5.6rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a p {
+    font-weight: bold;
+}
+
+td.repositories,
+th.followers {
+    width: 15.21vw;
+}
+
+td .remove {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+    margin-inline: auto;
+}
+
+.empty-state {
+    font-family: var(--ff-secondary);
+    background-color: var(--no-favs-bg-color);
+
+    display: flex;
+}
+
+.no-favs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+
+    margin: 21rem auto 28.9rem;
+}
+
+.no-favs svg {
+    width: 13.2rem;
+    height: 12.5rem;
+}
+
+.no-favs h2 {
+    font-size: 4rem;
+    line-height: 2.5rem;
+    color: var(--no-favs-color);
+}
+
+.hide {
+    display: none;
+}
