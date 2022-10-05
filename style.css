@@ -18,8 +18,8 @@
 
     --input-bg-color: hsl(191, 65%, 7%);
     --input-color: #7C7C8A;
-    --btn-color: hsl(195, 91%, 25%);
-    --scroll-color: hsl(191, 31%, 42%);
+    --dark-blue: hsl(195, 91%, 25%);
+    --light-blue: hsl(191, 31%, 42%);
     --no-favs-bg-color: hsl(192, 63%, 3%);
     --no-favs-color: #4E5455;
 }
@@ -83,7 +83,7 @@ header {
 }
 
 .search button {
-    background-color: var(--btn-color);
+    background-color: var(--dark-blue);
     border-radius: .5rem;
     border: none;
     padding: 1.2rem 3.2rem;
@@ -107,20 +107,23 @@ header {
 
 .search button:hover {
     background-color: #FFFFFF;
-    color: var(--btn-color);
+    color: var(--dark-blue);
 
     transition: all .7s ease;
 }
 
 .search button:hover svg path {
-    fill: var(--btn-color);
+    fill: var(--dark-blue);
     transition: all .7s ease;
 }
 
 .table {
-    border: 1px solid var(--scroll-color);
+    border: 1px solid var(--light-blue);
     border-radius: 1.2rem;
     overflow: hidden;
+
+    max-height: 68.8rem;
+    overflow-y: overlay;
 }
 
 table {
@@ -133,13 +136,7 @@ table * {
     line-height: 160%;
     color: var(--text-color);
 }
-/*
-table tr {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-}
-*/
+
 table tr:nth-child(odd) {
     background-color: var(--secondary-color);
 }
@@ -147,8 +144,8 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
     background-color: var(--tertiary-color);
 
-    border-top: 1px solid var(--scroll-color);
-    border-bottom: 1px solid var(--scroll-color);
+    border-top: 1px solid var(--light-blue);
+    border-bottom: 1px solid var(--light-blue);
 }
 
 table th {
@@ -157,18 +154,16 @@ table th {
     padding: 1.6rem 4rem;
 }
 
-table tbody {
-    /*display: block;*/
-    max-height: 62.4rem;
-    overflow: overlay;
+table th:first-child {
+    width: 35vw;
 }
 
-tbody::-webkit-scrollbar {
+.table::-webkit-scrollbar {
     width: 2.2rem;
 }
 
-tbody::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-color);
+.table::-webkit-scrollbar-thumb {
+    background-color: var(--light-blue);
     border-radius: 1rem;
 
     border: .8rem solid rgba(0, 0, 0, 0);
@@ -201,11 +196,6 @@ td.user a p {
     font-weight: bold;
 }
 
-td.repositories,
-th.followers {
-    width: 15.21vw;
-}
-
 td .remove {
     background: none;
     border: none;
@@ -229,7 +219,7 @@ td .remove {
     justify-content: center;
     gap: 6rem;
 
-    margin: 21rem auto 28.9rem;
+    margin: 21rem auto 28.7rem;
 }
 
 .no-favs svg {
